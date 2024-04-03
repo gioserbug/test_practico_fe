@@ -1,4 +1,5 @@
 import { api } from "./api";
+import { toast } from "sonner";
 
 const baseEndpoint = "api/items";
 
@@ -7,7 +8,7 @@ export const getItems = async (search) => {
     const response = await api.get(`${baseEndpoint}?q=${search}`);
     return response.data || {};
   } catch (error) {
-    console.log(error?.response?.data?.message || error.message);
+    toast.error(error?.response?.data?.message || error.message);
     return {};
   }
 };
@@ -17,7 +18,7 @@ export const getItem = async (id) => {
     const response = await api.get(`${baseEndpoint}/${id}`);
     return response.data || {};
   } catch (error) {
-    console.log(error?.response?.data?.message || error.message);
+    toast.error(error?.response?.data?.message || error.message);
     return {};
   }
 };
