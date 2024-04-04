@@ -22,10 +22,14 @@ const List = () => {
     <div className="list">
       {isFetching ? (
         <Skeleton height={180} count={4} style={{ marginBottom: "5px" }} />
-      ) : (
-        data?.items
+      ) : data?.items?.length > 0 ? (
+        data.items
           ?.slice(0, 4)
           .map((item, index) => <Card key={index} item={item} />)
+      ) : (
+        <h4 style={{ textAlign: "center" }}>
+          No hay publicaciones que coincidan con tu búsqueda.
+        </h4>
       )}
     </div>
   );

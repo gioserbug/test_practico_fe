@@ -111,23 +111,6 @@ body {
   color: $color-description;
 }
 
-.chip {
-  padding: 3px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  margin-left: 10px;
-
-  &.new {
-    background-color: $color-nuevo;
-    color: #fff;
-  }
-
-  &.used {
-    background-color: $color-usado;
-    color: #333;
-  }
-}
-
 .text-small {
   font-size: 12px;
 }
@@ -154,4 +137,77 @@ body {
 .btn-comprar:hover {
   background-color: darken($color-btn-comprar, 10%);
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.1);
+}
+
+.image-shipping {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.tooltip {
+  font-size: 14px;
+  width: 100px;
+  visibility: hidden;
+  background-color: $color-description;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  margin-bottom: 2px;
+}
+
+.image-shipping:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.input-search {
+  font-size: 16px;
+  border-radius: 2px;
+  padding: 0 10px;
+  height: 30px;
+  width: 100%;
+  border-color: transparent;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-search {
+  width: 44px;
+  height: 34px;
+  border: none;
+  background-color: $white-color;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.btn-search:hover {
+  background-color: $hover-color;
+}
+
+.header-stack {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.header-stack > *:nth-child(1) {
+  width: 7%;
+}
+
+.header-stack > *:nth-child(2) {
+  flex: 1;
+}
+
+.image-logo {
+  cursor: pointer;
 }

@@ -1,30 +1,12 @@
-import { useEffect, useState } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Header from "../components/Header";
 
 const Layout = () => {
-  const [searched, setSearched] = useState("");
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const search = searchParams.get("search");
-
-  useEffect(() => {
-    if (search) {
-      setSearched(search);
-    } else {
-      setSearched("");
-    }
-  }, [search]);
-
   return (
     <>
       <div className="container-items searcher">
         <div className="item">
-          <input
-            placeholder="Buscar"
-            value={searched}
-            onChange={(event) => setSearched(event.target.value)}
-          />
-          <Link to={searched ? `/items?search=${searched}` : ""}>Buscar</Link>
+          <Header />
         </div>
       </div>
 

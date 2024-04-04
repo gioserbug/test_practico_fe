@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import image_shipping from "../../public/assets/ic_Shipping.png";
 
 const Card = ({ item }) => {
   const { id, picture, price, title, free_shipping, condition } = item;
@@ -18,16 +19,20 @@ const Card = ({ item }) => {
       <div>
         <h3>
           <span>$ {price?.decimals}</span>
-          <span className={`chip ${condition === "new" ? "new" : "used"}`}>
-            {condition === "new" ? "Nuevo" : "Usado"}
-          </span>
+
+          {free_shipping && (
+            <div className="image-shipping">
+              <img src={image_shipping} alt="image shipping" />
+              <div className="tooltip">Envío gratis</div>
+            </div>
+          )}
         </h3>
         <br />
         <p>{title}</p>
       </div>
 
       <div>
-        <p className="text-small">{free_shipping && "Envío gratis"}</p>
+        <p className="text-small"> {condition === "new" && "Nuevo"}</p>
       </div>
     </div>
   );
