@@ -16,13 +16,18 @@ const Card = ({ item }) => {
       </div>
 
       <div>
-        <p>{price?.decimals}</p>
+        <h3>
+          <span>$ {price?.decimals}</span>
+          <span className={`chip ${condition === "new" ? "new" : "used"}`}>
+            {condition === "new" ? "Nuevo" : "Usado"}
+          </span>
+        </h3>
+        <br />
         <p>{title}</p>
-        <p>{condition === "new" ? "Nuevo" : "Usado"}</p>
       </div>
 
       <div>
-        <p>{free_shipping ? "Envío gratis" : "Con costo de envío"}</p>
+        <p className="text-small">{free_shipping && "Envío gratis"}</p>
       </div>
     </div>
   );

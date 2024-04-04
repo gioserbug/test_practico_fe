@@ -21,7 +21,7 @@ const List = () => {
   return (
     <div className="list">
       {isFetching ? (
-        <Skeleton height={160} count={4} style={{ marginBottom: "5px" }} />
+        <Skeleton height={180} count={4} style={{ marginBottom: "5px" }} />
       ) : (
         data?.items
           ?.slice(0, 4)

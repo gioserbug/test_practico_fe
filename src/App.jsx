@@ -8,7 +8,10 @@ import "react-loading-skeleton/dist/skeleton.css";
 import "./styles/App.scss";
 
 function App() {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { refetchOnWindowFocus: false } },
+  });
+
   return (
     <QueryClientProvider client={queryClient}>
       <Toaster richColors position="top-right" />
