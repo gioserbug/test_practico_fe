@@ -10,19 +10,29 @@ const Layout = () => {
   useEffect(() => {
     if (search) {
       setSearched(search);
+    } else {
+      setSearched("");
     }
   }, [search]);
 
   return (
     <>
-      <input
-        placeholder="Buscar"
-        value={searched}
-        onChange={(event) => setSearched(event.target.value)}
-      />
-      <Link to={searched ? `/items?search=${searched}` : ""}>Buscar</Link>
+      <div className="container-items searcher">
+        <div className="item">
+          <input
+            placeholder="Buscar"
+            value={searched}
+            onChange={(event) => setSearched(event.target.value)}
+          />
+          <Link to={searched ? `/items?search=${searched}` : ""}>Buscar</Link>
+        </div>
+      </div>
 
-      <Outlet />
+      <div className="container-items">
+        <div className="item">
+          <Outlet />
+        </div>
+      </div>
     </>
   );
 };

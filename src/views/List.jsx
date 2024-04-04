@@ -1,6 +1,8 @@
 import { useLocation } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getItems } from "../services/items.services";
+import Skeleton from "react-loading-skeleton";
+import Card from "../components/Card";
 
 const List = () => {
   const location = useLocation();
@@ -8,7 +10,7 @@ const List = () => {
   const search = searchParams.get("search");
 
   if (!search) {
-    return <div>Empty</div>;
+    return null;
   }
 
   const { data, isFetching } = useQuery({
@@ -16,7 +18,17 @@ const List = () => {
     queryFn: () => getItems(search),
   });
 
-  return <div>{isFetching ? "loading" : data?.name}</div>;
+  return (
+    <div className="list">
+      {isFetching ? (
+        <Skeleton height={160} count={4} style={{ marginBottom: "5px" }} />
+      ) : (
+        data?.items
+          ?.slice(0, 4)
+          .map((item, index) => <Card key={index} item={item} />)
+      )}
+    </div>
+  );
 };
 
 export default List;

@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getItem } from "../services/items.services";
+import Skeleton from "react-loading-skeleton";
+import LayoutDetail from "../components/LayoutDetail";
 
 const Detail = () => {
   const { id } = useParams();
@@ -10,7 +12,15 @@ const Detail = () => {
     queryFn: () => getItem(id),
   });
 
-  return <div>{isFetching ? "loading" : data?.item?.title}</div>;
+  return (
+    <>
+      {isFetching ? (
+        <Skeleton height="100vh" />
+      ) : (
+        <LayoutDetail item={data?.item} />
+      )}
+    </>
+  );
 };
 
 export default Detail;
