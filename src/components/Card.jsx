@@ -17,7 +17,7 @@ const Card = ({ item }) => {
       </div>
 
       <div>
-        <h3>
+        <p className="text-price-list">
           <span>$ {price?.decimals}</span>
 
           {free_shipping && (
@@ -26,9 +26,9 @@ const Card = ({ item }) => {
               <div className="tooltip">Envío gratis</div>
             </div>
           )}
-        </h3>
-        <br />
-        <p>{title}</p>
+        </p>
+
+        <p className="text-title-list">{title}</p>
       </div>
 
       <div>

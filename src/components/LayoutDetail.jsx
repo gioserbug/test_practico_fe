@@ -16,16 +16,9 @@ const LayoutDetail = ({ item }) => {
       <div>
         <img src={picture} alt="Product" width="100%" />
 
-        <br />
-        <br />
-
-        <h2>Descripción del producto</h2>
-
-        <br />
+        <p className="title-description">Descripción del producto</p>
 
         <p className="description">{description}</p>
-
-        <br />
       </div>
 
       <div>
@@ -34,17 +27,11 @@ const LayoutDetail = ({ item }) => {
           {`${sold_quantity} Vendidos`}
         </p>
 
-        <br />
-
-        <h3>{title}</h3>
-
-        <br />
-
-        <p className="text-price">$ {price?.decimals}</p>
+        <p className="text-title">{title}</p>
 
         <p className="text-small">{free_shipping && "Envío gratis"}</p>
 
-        <br />
+        <p className="text-price">$ {price?.decimals}</p>
 
         <button className="btn-comprar">Comprar</button>
       </div>

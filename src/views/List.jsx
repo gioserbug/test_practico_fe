@@ -30,7 +30,7 @@ const List = () => {
       <BreadcrumbList categories={data?.categories} />
       <div className="list">
         {isFetching ? (
-          <Skeleton height={180} count={4} style={{ marginBottom: "5px" }} />
+          <Skeleton height={245} count={4} style={{ marginBottom: "5px" }} />
         ) : data?.items?.length > 0 ? (
           data.items
             ?.slice(0, 4)
