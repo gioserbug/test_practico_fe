@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import image_shipping from "../../public/assets/ic_Shipping.png";
+import image_shipping from "../assets/ic_Shipping.png";
 
 const Card = ({ item }) => {
   const { id, picture, price, title, free_shipping, condition } = item;

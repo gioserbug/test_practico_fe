@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import image_logo_ml from "../../public/assets/Logo_ML.png";
-import image_search from "../../public/assets/ic_Search.png";
+import image_logo_ml from "../assets/Logo_ML.png";
+import image_search from "../assets/ic_Search.png";
 
 const Header = () => {
   const [searched, setSearched] = useState("");
