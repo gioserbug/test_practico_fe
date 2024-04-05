@@ -34,7 +34,11 @@ const Header = () => {
             className="image-logo"
             src={image_logo_ml}
             alt="image logo"
-            onClick={() => navigate("/")}
+            onClick={() => {
+              navigate("/");
+              localStorage.removeItem("search");
+              localStorage.removeItem("categoryItem");
+            }}
           />
         </div>
 

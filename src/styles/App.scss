@@ -5,6 +5,8 @@ $white-color: #fff;
 $color-nuevo: #28a745;
 $color-usado: #ffc107;
 $color-btn-comprar: #3483fa;
+$color-breadcrumb: #333;
+$color-hover-breadcrumb: #007bff;
 $color-description: #666;
 $transition-duration: 0.3s;
 
@@ -196,7 +198,7 @@ body {
   display: flex;
   flex-direction: row;
   margin-top: 10px;
-  gap: 10px;
+  gap: 15px;
   margin-bottom: 5px;
 }
 
@@ -210,4 +212,25 @@ body {
 
 .image-logo {
   cursor: pointer;
+}
+
+.breadcrumb {
+  margin-bottom: 15px;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: $color-breadcrumb;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  color: $color-hover-breadcrumb;
+}
+
+.breadcrumb a:not(:last-child)::after {
+  content: "›";
+  font-size: 20px;
+  margin: 0 10px;
+  color: #999;
 }

@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getItem } from "../services/items.services";
 import Skeleton from "react-loading-skeleton";
 import LayoutDetail from "../components/LayoutDetail";
+import { BreadcrumbDetail } from "../components/Breadcrumb";
 
 const Detail = () => {
   const { id } = useParams();
@@ -14,6 +15,7 @@ const Detail = () => {
 
   return (
     <>
+      <BreadcrumbDetail />
       {isFetching ? (
         <Skeleton height="100vh" />
       ) : (
